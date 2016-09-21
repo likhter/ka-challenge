@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>KhanAcademy &mdash; Challenge Framework</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="challenge.css"/>
+</head>
+<body>
+    <h1>Khan Academy &mdash; Challenge Framework</h1>
+    <div class="content">
+        <div class="clmn">
+            <textarea id="editor">// your code here</textarea>
+        </div>
+        <div class="clmn right">
+            <div>
+                <button class="sampleBtn" data-sample-id="1">sample #1</button>
+                <button class="sampleBtn" data-sample-id="2">sample #2</button>
+                <button class="sampleBtn" data-sample-id="3">sample #3</button>
+                <button class="sampleBtn" data-sample-id="4">sample #4</button>
+            </div>
+            <div class="resultArea">
+                <div class="filterLine" id="whitelist">
+                    <label>whitelist:</label>
+                    <div class="resultLine">
+                        <input type="text"/>
+                        <span class="result"></span>
+                    </div>
+                </div>
+                <div class="filterLine" id="blacklist">
+                    <label>blacklist:</label>
+                    <div class="resultLine">
+                        <input type="text"/>
+                        <span class="result"></span>
+                    </div>
+                </div>
+                <div class="filterLine" id="structure">
+                    <label>structure:</label>
+                    <div class="resultLine">
+                        <input type="text"/>
+                        <span class="result"></span>
+                    </div>
+                </div>
+                <div class="hidden resultErr" id="parseError">Could not not parse this code</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2>Quickstart</h2>
+        <p>
+            To specify any of rules above use node types, <a target="_blank" href="https://github.com/jquery/esprima/blob/master/src/nodes.ts">described</a>
+            in Esprima's source files (e.g. <code>IfStatement</code>, <code>ForStatement</code> or <code>CallExpression</code>) divided by space.
+        </p>
+        <p>
+            Structure rule gives you ability to check roughly structure of the program in the following way:
+            to specify structure, type appropriate node types divided by space in the order they are nested into each other.<br/>
+            For example, <code>ForStatement IfStatement</code> stands for &laquo;<code>if</code> statement inside the <code>for</code> loop&raquo;. Example #4 shows visually how useful this could be.
+        </p>
+        <p>
+            Click sample buttons above the rules' inputs to see how it works with predefined samples.
+        </p>
+        <p>
+            Also please don't forget to take a look at <code>README.md</code> file in <a target="_blank" href="https://github.com/likhter/ka-challenge">the repository</a>, it contains
+            known issues, my personal thoughts and additional description regarding how to build/develop this package.
+        </p>
+    </div>
+    <script src="challenge.js"></script>
+</body>
+</html>

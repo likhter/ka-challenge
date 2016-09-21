@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "accessor-pairs": 1,
+    "dot-notation": 1,
+    "no-global-assign": 1,
+    "no-lone-blocks": 1
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  }
+}

@@ -1,0 +1,95 @@
+@import (inline) 'https://fonts.googleapis.com/css?family=Fira+Sans';
+@import (inline) '../node_modules/codemirror/lib/codemirror.css';
+
+@colorDefaultGrey: #e8e8e8;
+@colorLink: mediumblue;
+@colorLinkHover: darkblue;
+@colorErrBackground: pink;
+@colorErrText: red;
+@colorSuccessBackground: chartreuse;
+@colorSuccessText: darkgreen;
+
+* {
+  box-sizing: border-box;
+}
+
+.defaultFontSettings {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  .defaultFontSettings;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input, button {
+  .defaultFontSettings;
+}
+
+code {
+  background-color: @colorDefaultGrey;
+  font-size: 1em;
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: @colorLink;
+}
+
+a:hover { color: @colorLinkHover; }
+
+#parseError {
+  margin-top: 1em;
+  line-height: 2em;
+  padding-left: 1em;
+}
+
+.hidden { visibility: hidden; }
+.resultOk {
+  background-color: @colorSuccessBackground;
+  color: @colorSuccessText;
+}
+.resultErr {
+  background-color: @colorErrBackground;
+  color: @colorErrText;
+}
+
+.content {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: @colorDefaultGrey;
+
+  .clmn {
+    width: 50%;
+    padding: 1em;
+    min-height: 350px;
+    .left {
+      .CodeMirror { height: auto; }
+    }
+    &.right {
+      display: flex;
+      flex-flow: column;
+      .filterLine {
+        padding-top: 1em;
+        .resultLine {
+          display: flex;
+          flex-flow: row wrap;
+          line-height: 2em;
+          label { clear: both; };
+          input { width: 70%; };
+          span {
+            display: inline-block;
+            text-align: center;
+            width: 30%;
+            padding-left: 1em;
+            padding-right: 1em;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
